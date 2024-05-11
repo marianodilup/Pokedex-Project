@@ -2,12 +2,16 @@ const pokelist = document.querySelector("#pokedex");
 
 function addPokemonItem(pokemon) {
   const li = document.createElement("li");
+
   const h2 = document.createElement("h2");
   h2.innerHTML = pokemon.id;
   const div = document.createElement("div");
+  div.classList.add("card");
   const img = document.createElement("img");
   img.setAttribute("src", pokemon.sprites.front_default);
+  img.classList.add("card-image");
   const p = document.createElement("p");
+  p.classList.add("card-title");
   p.innerHTML = pokemon.name;
 
   li.appendChild(div);
@@ -28,6 +32,6 @@ async function getPokemon(id) {
   }
 }
 
-for (let i = 1; i <= 9; i++) {
+for (let i = 1; i <= 150; i++) {
   getPokemon(i);
 }
